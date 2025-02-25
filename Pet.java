@@ -1,4 +1,4 @@
-public class Pet {
+public class Pet { // class defines tamagotchi pet and actions that can be done to it
 
     private String type;
     private String name;
