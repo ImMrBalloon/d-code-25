@@ -6,9 +6,9 @@ public class Pet { // class defines tamagotchi pet and actions that can be done 
     private int happiness;
     private int health;
     private int energy;
-    private int hunger;
+    private double hunger;
     private boolean alive;
-    private Status state;
+    private String state;
 
     public Pet(String typ, String nam) {
         this.type = typ;
@@ -17,13 +17,19 @@ public class Pet { // class defines tamagotchi pet and actions that can be done 
         this.happiness = 5;
         this.health = 5;
         this.energy = 5;
-        this.hunger = 5;
+        this.hunger = 5.0;
         this.alive = true;
         
     }
 
-    public void setState(Status s) {
+    public void setState(String s) {
         this.state=s;
+    }
+
+    public void sleep() { // will be called after some time not doing anything
+        this.health++;
+        this.energy++;
+        this.hunger+=.5;
     }
 
     public void feed(String input) {
@@ -45,7 +51,15 @@ public class Pet { // class defines tamagotchi pet and actions that can be done 
         this.happiness++;
         this.health++;
         this.energy--;
-        this.hunger--;
+        this.hunger++;
+    }
+
+    public void play() {
+        this.weight-=2;
+        this.happiness+=2;
+        this.health+=2;
+        this.energy-=2;
+        this.hunger+=2;
     }
 
     public void hungry() { // will be called with time when that is figured out
@@ -69,7 +83,7 @@ public class Pet { // class defines tamagotchi pet and actions that can be done 
     public void train() {
         this.happiness++;
         this.energy--;
-        this.hunger--;
+        this.hunger++;
     }
 }
 
