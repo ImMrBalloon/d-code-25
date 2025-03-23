@@ -10,9 +10,9 @@ public class Pet { // class defines tamagotchi pet and actions that can be done 
     private boolean alive;
     private String state;
 
-    public Pet(String typ, String nam) {
+    public Pet(String typ) {
         this.type = typ;
-        this.name = nam;
+        this.name = "John Doe";
         this.weight = 5;
         this.happiness = 5;
         this.health = 5;
@@ -24,6 +24,10 @@ public class Pet { // class defines tamagotchi pet and actions that can be done 
 
     public void setState(String s) {
         this.state=s;
+    }
+
+    public void setName(String n) {
+        this.name = n;
     }
 
     public void sleep() { // will be called after some time not doing anything
